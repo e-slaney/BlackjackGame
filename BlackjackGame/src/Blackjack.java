@@ -23,7 +23,7 @@ public class Blackjack {
 
 	public void setWager(double wager) {
 		this.currWager = wager;
-		if(this.userMoney - currWager < 0) {
+		if(this.userMoney - currWager < 0 || currWager == 0) {
 			System.out.println("Cannot wager more money than you have!");
 			throw new IllegalArgumentException();
 		} else {
