@@ -128,7 +128,8 @@ public class GameFrame extends JFrame implements ActionListener{
 				this.gamePanel.addCardsToTable();
 				this.choicePanel.updateCash();
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, "You must use a valid input value.");
+				//JOptionPane.showMessageDialog(null, "You must use a valid input value.");
+				JOptionPane.showMessageDialog(null, e.toString());
 				continue;
 			}
 			break;

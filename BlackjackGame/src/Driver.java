@@ -24,7 +24,8 @@ public class Driver {
 					frame.gamePanel.addCardsToTable();
 					frame.choicePanel.updateCash();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "You must use a valid input value.");
+					//JOptionPane.showMessageDialog(null, "You must use a valid input value.");
+					JOptionPane.showMessageDialog(null, e);
 					continue;
 				}
 				break;
@@ -34,6 +35,9 @@ public class Driver {
 				game.stand();
 				JOptionPane.showMessageDialog(null, "You have a true Blackjack! Congrats! You Win!");
 				frame.choicePanel.updateCash();
+				frame.choicePanel.hitButton.setEnabled(false);
+				frame.choicePanel.standButton.setEnabled(false);
+				frame.choicePanel.playButton.setEnabled(true);
 			}
 			
 		} else {
