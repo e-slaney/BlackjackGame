@@ -47,7 +47,7 @@ Follow the steps below to get a copy of the project and run it on your local mac
 2. Run the game:
 
    ```
-   java Main
+   java Driver
    ```
 
 ## How to Play
