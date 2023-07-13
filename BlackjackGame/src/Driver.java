@@ -26,7 +26,7 @@ public class Driver {
 		String input;
 		//Active Game Loop	
 		
-		Blackjack game = new Blackjack(1000.00);
+		Blackjack game = new Blackjack(10000.00);
 		GameFrame frame = new GameFrame(game);
 		
 		int playingGame = JOptionPane.showConfirmDialog(null, "Would you like to play Blackjack?", "Play Blackjack!", JOptionPane.YES_NO_OPTION);
