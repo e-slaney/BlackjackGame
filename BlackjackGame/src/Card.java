@@ -79,7 +79,7 @@ public class Card {
 			break;
 		}
 
-		this.path = "./assets/cards/" + num + "_of_" + this.suit.toString().toLowerCase() + ".png";
+		this.path = "./" + num + "_of_" + this.suit.toString().toLowerCase() + ".png";
 
 	}
 

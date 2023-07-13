@@ -29,24 +29,24 @@ public class CardPanel extends JPanel {
 			for(int i = 0; i < blackjack.getHouseHand().size(); i++) {
 				if(i == 0) {
 					JLabel tempLabel = new JLabel();
-					tempLabel.setIcon(new ImageIcon(blackjack.getHouseHand().get(i).getPath()));
+					tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(blackjack.getHouseHand().get(i).getPath())));
 					cards.add(tempLabel);
 				} else {
 					JLabel tempLabel = new JLabel();
-					tempLabel.setIcon(new ImageIcon("./assets/cards/card back red.png"));
+					tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("./card back red.png")));
 					cards.add(tempLabel);
 				}
 			}
 		} else if(hand == Hand.USER){
 			for(Card card: blackjack.getUserHand()) {
 				JLabel tempLabel = new JLabel();
-				tempLabel.setIcon(new ImageIcon(card.getPath()));
+				tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(card.getPath())));
 				cards.add(tempLabel);
 			}
 		} else {
 			for(Card card: blackjack.getHouseHand()) {
 				JLabel tempLabel = new JLabel();
-				tempLabel.setIcon(new ImageIcon(card.getPath()));
+				tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(card.getPath())));
 				cards.add(tempLabel);
 			}
 		}
@@ -61,7 +61,7 @@ public class CardPanel extends JPanel {
 	
 	public void addCard(Card card) {
 		JLabel label = new JLabel();
-		label.setIcon(new ImageIcon(card.getPath()));
+		label.setIcon(new ImageIcon(getClass().getClassLoader().getResource(card.getPath())));
 		cards.add(label);
 		this.add(label);
 		this.setOpaque(false);

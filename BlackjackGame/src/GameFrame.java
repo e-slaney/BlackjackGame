@@ -20,28 +20,28 @@ public class GameFrame extends JFrame implements ActionListener{
 	TablePanel gamePanel;
 	ChoicePanel choicePanel;
 	Blackjack blackjack;
-	
+
 	public GameFrame(Blackjack blackjack) {
-		
+
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setSize(1400, 840);
 		this.setLayout(new BorderLayout());
 		this.setResizable(false);
 		this.blackjack = blackjack;
-		
+
 		gamePanel = new TablePanel(blackjack);
 		gamePanel.setPreferredSize(new Dimension((3 * this.getWidth())/4-20, this.getHeight()));
 		gamePanel.setBackground(Color.GRAY);
-		
+
 		choicePanel = new ChoicePanel(blackjack);
 		choicePanel.setPreferredSize(new Dimension(this.getWidth()/4, this.getHeight()));
 		choicePanel.setBackground(new Color(0x5c0005));
-		
+
 		choicePanel.hitButton.addActionListener(this);
 		choicePanel.standButton.addActionListener(this);
 		choicePanel.playButton.addActionListener(this);
 		choicePanel.interior.setOpaque(false);
-		
+
 		JPanel topBorder = new JPanel();
 		topBorder.setBackground(new Color(0x4a2511));
 		JPanel leftBorder = new JPanel();
@@ -52,28 +52,28 @@ public class GameFrame extends JFrame implements ActionListener{
 		bottomBorder.setBackground(new Color(0x4a2511));
 
 		JPanel interiorPanel = new JPanel();
-		
+
 		this.add(topBorder, BorderLayout.NORTH);
 		this.add(leftBorder, BorderLayout.WEST);
 		this.add(rightBorder, BorderLayout.EAST);
 		this.add(bottomBorder, BorderLayout.SOUTH);
 
-		
+
 		interiorPanel.setLayout(new BorderLayout());
 		interiorPanel.add(gamePanel, BorderLayout.WEST);
 		interiorPanel.add(choicePanel, BorderLayout.EAST);
-		
+
 		this.add(interiorPanel);
-		
+
 		this.setVisible(true);
-		
+
 	}
-	
-	
+
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// If the hit button is selected, hit the user's deck.
-		
+
 		if(e.getSource() == choicePanel.hitButton) {
 			blackjack.hit();
 			gamePanel.updateTable();
@@ -101,24 +101,23 @@ public class GameFrame extends JFrame implements ActionListener{
 			choicePanel.standButton.setEnabled(false);
 			choicePanel.playButton.setEnabled(true);
 		}
-		
+
 		if(e.getSource() == choicePanel.playButton) {
 			choicePanel.hitButton.setEnabled(true);
 			choicePanel.standButton.setEnabled(true);
 			choicePanel.playButton.setEnabled(false);
 			playGame();
 		}
-		
+
 	}	
-	
+
 	public void playGame() {
 		gamePanel.remove(gamePanel.dealerScore);
 		gamePanel.remove(gamePanel.dealerCards);
 		gamePanel.remove(gamePanel.userCards);
 		gamePanel.remove(gamePanel.userScore);
 		blackjack.reset();
-		int playingGame = JOptionPane.showConfirmDialog(null, "Would you like to play Blackjack?", "Play Blackjack!", JOptionPane.YES_NO_OPTION);
-		if(playingGame == JOptionPane.YES_OPTION) {
+		while(true) {
 			try {
 				String amt = JOptionPane.showInputDialog(null, "Please input the amount of money you would like to wager");
 				if(amt == null) {
@@ -130,19 +129,19 @@ public class GameFrame extends JFrame implements ActionListener{
 				this.choicePanel.updateCash();
 			} catch (Exception e) {
 				JOptionPane.showMessageDialog(null, "You must use a valid input value.");
+				continue;
 			}
-			
-			if(blackjack.getUserHand().size() == 2 && blackjack.getBestHand(blackjack.getUserHand()) == 21) {
-				blackjack.stand();
-				JOptionPane.showMessageDialog(null, "You have a true Blackjack! Congrats! You Win!");
-				this.choicePanel.updateCash();
-			}
-			
-		} else {
-			this.choicePanel.hitButton.setEnabled(false);
-			this.choicePanel.standButton.setEnabled(false);
-			this.choicePanel.playButton.setEnabled(true);
+			break;
+		}
+
+		if(blackjack.getUserHand().size() == 2 && blackjack.getBestHand(blackjack.getUserHand()) == 21) {
+			blackjack.stand();
+			JOptionPane.showMessageDialog(null, "You have a true Blackjack! Congrats! You Win!");
+			this.choicePanel.updateCash();
+			choicePanel.hitButton.setEnabled(false);
+			choicePanel.standButton.setEnabled(false);
+			choicePanel.playButton.setEnabled(true);
 		}
 	}
-	
+
 }
