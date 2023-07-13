@@ -33,7 +33,9 @@ Follow the steps below to get a copy of the project and run it on your local mac
 2. Change into the project directory:
 
    ```
-   cd blackjack-game
+   a. cd blackjack-game
+
+   b. cd BlackjackGame
    ```
 
 ### Running the Game
@@ -41,13 +43,13 @@ Follow the steps below to get a copy of the project and run it on your local mac
 1. Compile the Java source files:
 
    ```
-   javac *.java
+   javac -classpath ./assets -sourcepath ./src -d ./bin ./src/*.java
    ```
 
 2. Run the game:
 
    ```
-   java Driver
+   java -classpath ./bin:./assets Driver
    ```
 
 ## How to Play
