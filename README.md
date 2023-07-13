@@ -52,6 +52,10 @@ Follow the steps below to get a copy of the project and run it on your local mac
    java -classpath ./bin:./assets Driver
    ```
 
+## Alternate Access
+
+   The .jar file is available for this game as well. If you download the file from this repo, you can simply double click the application to run the game on your local machine.
+
 ## How to Play
 
 1. Launch the game by following the instructions in the "Running the Game" section.
