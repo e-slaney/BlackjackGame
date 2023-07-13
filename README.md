@@ -56,23 +56,21 @@ Follow the steps below to get a copy of the project and run it on your local mac
 
 2. The game window will appear, displaying a graphical representation of the game table.
 
-3. To start a new round, click the "New Game" button.
+3. You will be prompted to enter your wager amount. Enter a valid positive integer and click "OK."
 
-4. You will be prompted to enter your bet amount. Enter a valid positive integer and click "OK."
+4. The game will deal two cards to both the player and the dealer. Your cards will be face-up, and the dealer's first card will be face-up while the second card remains face-down.
 
-5. The game will deal two cards to both the player and the dealer. Your cards will be face-up, and the dealer's first card will be face-up while the second card remains face-down.
-
-6. You have two options: "Hit" or "Stand."
+5. You have two options: "Hit" or "Stand."
    - To request an additional card, click the "Hit" button. The game will deal you a new card.
    - To keep your current hand, click the "Stand" button. The dealer will then reveal their face-down card and proceed to draw cards according to the standard rules of Blackjack.
 
-7. If the total value of your hand exceeds 21 at any point, you bust and lose the round.
+6. If the total value of your hand exceeds 21 at any point, you bust and lose the round.
 
-8. Once you choose to stand, the dealer will play their hand automatically, following the standard rules of Blackjack. The game will reveal the dealer's cards and determine the outcome of the round.
+7. Once you choose to stand, the dealer will play their hand automatically, following the standard rules of Blackjack. The game will reveal the dealer's cards and determine the outcome of the round.
 
-9. After the round ends, the game will display the result (win, loss, or tie) and update your balance accordingly.
+8. After the round ends, the game will display the result (win, loss, or tie) and update your balance accordingly.
 
-10. You can start a new round by clicking the "Play New Game!" button again, or quit the game by closing the window.
+9. You can start a new round by clicking the "Play New Game!" button again, or quit the game by closing the window.
 
 
 ### Assets Used:
