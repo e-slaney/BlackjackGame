@@ -33,8 +33,6 @@ public class Blackjack {
 
 	public void hit() {
 		this.userHand.add(this.deck.dealCard());
-		int houseBestHand = getBestHand(houseHand);
-		int userBestHand = getBestHand(userHand);
 	}
 
 	//Returns true if you won, false if you lost.

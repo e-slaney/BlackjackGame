@@ -4,8 +4,6 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -15,6 +13,10 @@ import javax.swing.JPanel;
 
 public class GameFrame extends JFrame implements ActionListener{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	TablePanel gamePanel;
 	ChoicePanel choicePanel;
 	Blackjack blackjack;

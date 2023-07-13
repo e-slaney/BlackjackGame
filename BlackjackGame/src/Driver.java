@@ -1,17 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
-
 
 public class Driver {
 
@@ -20,11 +7,6 @@ public class Driver {
 		/*
 		 * GUI Build
 		 */
-		
-		boolean userBust;
-		Scanner scanner = new Scanner(System.in);
-		String input;
-		//Active Game Loop	
 		
 		Blackjack game = new Blackjack(10000.00);
 		GameFrame frame = new GameFrame(game);

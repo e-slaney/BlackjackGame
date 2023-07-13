@@ -7,6 +7,10 @@ import javax.swing.JPanel;
 
 public class CardPanel extends JPanel {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Blackjack blackjack;
 	
 	public enum Hand {
@@ -19,7 +23,7 @@ public class CardPanel extends JPanel {
 	
 	public CardPanel(Hand hand, Blackjack blackjack) {
 		this.cards = new ArrayList<>();
-		this.blackjack = blackjack;
+		this.setBlackjack(blackjack);
 		
 		if(hand == Hand.HOUSE) {
 			for(int i = 0; i < blackjack.getHouseHand().size(); i++) {
@@ -61,6 +65,16 @@ public class CardPanel extends JPanel {
 		cards.add(label);
 		this.add(label);
 		this.setOpaque(false);
+	}
+
+
+	public Blackjack getBlackjack() {
+		return blackjack;
+	}
+
+
+	public void setBlackjack(Blackjack blackjack) {
+		this.blackjack = blackjack;
 	}
 
 }
