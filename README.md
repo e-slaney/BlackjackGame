@@ -27,7 +27,7 @@ Follow the steps below to get a copy of the project and run it on your local mac
 1. Clone the repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/blackjack-game.git
+   git clone git@github.com:e-slaney/BlackjackGame.git
    ```
 
 2. Change into the project directory:
