@@ -2,7 +2,7 @@
 
 This is a simple implementation of the classic card game Blackjack, built using Java and Java Swing. The game allows the user to play against the computer dealer, following the standard rules of Blackjack.
 
-![Blackjack Screenshot](./assets/screenshot.png)
+![Blackjack Screenshot](BlackjackGame/assets/screenshot.png)
 
 ## Features
 
