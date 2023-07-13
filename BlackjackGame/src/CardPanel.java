@@ -1,4 +1,5 @@
 import java.awt.FlowLayout;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
@@ -29,24 +30,28 @@ public class CardPanel extends JPanel {
 			for(int i = 0; i < blackjack.getHouseHand().size(); i++) {
 				if(i == 0) {
 					JLabel tempLabel = new JLabel();
-					tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(blackjack.getHouseHand().get(i).getPath())));
+					URL imageFile = CardPanel.class.getResource(blackjack.getHouseHand().get(i).getPath());
+					tempLabel.setIcon(new ImageIcon(imageFile));
 					cards.add(tempLabel);
 				} else {
 					JLabel tempLabel = new JLabel();
-					tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("./card back red.png")));
+					URL imageFile = CardPanel.class.getResource("card back red.png");
+					tempLabel.setIcon(new ImageIcon(imageFile));
 					cards.add(tempLabel);
 				}
 			}
 		} else if(hand == Hand.USER){
 			for(Card card: blackjack.getUserHand()) {
 				JLabel tempLabel = new JLabel();
-				tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(card.getPath())));
+				URL imageFile = CardPanel.class.getResource(card.getPath());
+				tempLabel.setIcon(new ImageIcon(imageFile));
 				cards.add(tempLabel);
 			}
 		} else {
 			for(Card card: blackjack.getHouseHand()) {
 				JLabel tempLabel = new JLabel();
-				tempLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource(card.getPath())));
+				URL imageFile = CardPanel.class.getResource(card.getPath());
+				tempLabel.setIcon(new ImageIcon(imageFile));
 				cards.add(tempLabel);
 			}
 		}
