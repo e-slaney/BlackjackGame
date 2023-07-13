@@ -74,6 +74,7 @@ Follow the steps below to get a copy of the project and run it on your local mac
 
 9. You can start a new round by clicking the "Play New Game!" button again, or quit the game by closing the window.
 
+#### For a full list of Blackjack rules, please visit *https://en.wikipedia.org/wiki/Blackjackhttps://en.wikipedia.org/wiki/Blackjack*
 
 ### Assets Used:
 I do not own the playing card assets used in the Blackjack game.
