@@ -19,13 +19,16 @@ public class Driver {
 					if(amt == null) {
 						//If they cancel, just break and lock buttons.
 						//lock buttons
+						frame.choicePanel.hitButton.setEnabled(false);
+						frame.choicePanel.standButton.setEnabled(false);
+						frame.choicePanel.playButton.setEnabled(true);
+						break;
 					}
 					game.setWager(Double.parseDouble(amt));
 					frame.gamePanel.addCardsToTable();
 					frame.choicePanel.updateCash();
 				} catch (Exception e) {
-					//JOptionPane.showMessageDialog(null, "You must use a valid input value.");
-					JOptionPane.showMessageDialog(null, e);
+					JOptionPane.showMessageDialog(null, "You must use a valid input value.");
 					continue;
 				}
 				break;

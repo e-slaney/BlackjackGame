@@ -92,6 +92,7 @@ public class GameFrame extends JFrame implements ActionListener{
 			if(blackjack.stand()) {
 				//If true, this means we won! we should update the score on the table and lock the other buttons.
 				gamePanel.showHouseHand();
+				choicePanel.updateCash();
 				JOptionPane.showMessageDialog(null, "Congratulations! You've won $" + blackjack.getWager());
 			} else {
 				JOptionPane.showMessageDialog(null, "You lost! You lost $" + blackjack.getWager());
@@ -112,24 +113,29 @@ public class GameFrame extends JFrame implements ActionListener{
 	}	
 
 	public void playGame() {
-		gamePanel.remove(gamePanel.dealerScore);
-		gamePanel.remove(gamePanel.dealerCards);
-		gamePanel.remove(gamePanel.userCards);
-		gamePanel.remove(gamePanel.userScore);
-		blackjack.reset();
+		if(gamePanel.dealerCards != null) {
+			gamePanel.remove(gamePanel.dealerScore);
+			gamePanel.remove(gamePanel.dealerCards);
+			gamePanel.remove(gamePanel.userCards);
+			gamePanel.remove(gamePanel.userScore);
+			blackjack.reset();
+		}
 		while(true) {
 			try {
 				String amt = JOptionPane.showInputDialog(null, "Please input the amount of money you would like to wager");
 				if(amt == null) {
 					//If they cancel, just break and lock buttons.
 					//lock buttons
+					choicePanel.hitButton.setEnabled(false);
+					choicePanel.standButton.setEnabled(false);
+					choicePanel.playButton.setEnabled(true);
+					break;
 				}
 				blackjack.setWager(Double.parseDouble(amt));
 				this.gamePanel.addCardsToTable();
 				this.choicePanel.updateCash();
 			} catch (Exception e) {
-				//JOptionPane.showMessageDialog(null, "You must use a valid input value.");
-				JOptionPane.showMessageDialog(null, e.toString());
+				JOptionPane.showMessageDialog(null, "You must use a valid input value.");
 				continue;
 			}
 			break;
